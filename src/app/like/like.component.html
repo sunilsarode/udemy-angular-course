@@ -1,0 +1,5 @@
+<span class="btn" [class.btn-primary]="isSelected" 
+[class.btn-secondary]="!isSelected"
+(click)="onClick()"
+>Like</span>
+<span>{{ count}}</span> <!--here in html and also inside  {{}} we can not use alias -->

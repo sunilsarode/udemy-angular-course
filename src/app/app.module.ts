@@ -1,3 +1,4 @@
+
 import { TitleCase } from './TitleCase.pipe';
 import { SummaryPipe } from './summary.pipe';
 import { AuthorsService } from './authors.service';
@@ -19,7 +20,10 @@ import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
-
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { UdemyCourseFormComponent } from './udemy-course-form/udemy-course-form.component';
+import { PostComponentComponent } from './post-component/post-component.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +37,16 @@ import { ZippyComponent } from './zippy/zippy.component';
     PanelComponent,
     LikeComponent,
     InputFormatDirective,
-    ZippyComponent
+    ZippyComponent,
+    ContactFormComponent,
+    UdemyCourseFormComponent,
+    PostComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [CoursesService,AuthorsService],
   bootstrap: [AppComponent]

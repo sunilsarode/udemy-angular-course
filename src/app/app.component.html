@@ -1,5 +1,5 @@
-<app-favourite [is-Favourite]="post.isFavourite" (change)="onFavoriteChange($event)"></app-favourite>
-<br><br><!-- <h1>Angular</h1>
+<!-- <app-favourite [is-Favourite]="post.isFavourite" (change)="onFavoriteChange($event)"></app-favourite> -->
+<!-- <h1>Angular</h1>
  <courses></courses>
 <app-authors></app-authors>
 <app-favourite [is-Favourite]="post.isFavourite" (change)="onFavoriteChange($event)"></app-favourite>
@@ -20,10 +20,10 @@
     <!--app-like is custom component 
         Here is-Liked and likeCount are coming from like.components.ts file , and it initial 
         value are set using twee which is in appcomponent.ts ,where we may fetch this tweet using service -->    
-    <app-like [is-Liked]="tweet.isLiked" [likesCount]="tweet.likesCount"></app-like>
+    <!-- <app-like [is-Liked]="tweet.isLiked" [likesCount]="tweet.likesCount"></app-like> -->
 
 <!-- (change)="onFavoriteChange() -->
-    <br><br>
+    <!-- <br><br>
 <div *ngIf="courses.length>0;then Courses else noCourses">
     
 </div>
@@ -52,15 +52,15 @@
 <div *ngSwitchDefault>Othrewise</div>
 </div>
 
-<br><br>
+<br><br> -->
 <!-- <button (click)="onAdd()">Add</button> -->
-<button (click)="loadCourses()">Load Courses</button>
+<!-- <button (click)="loadCourses()">Load Courses</button> -->
 <!-- <ul>
     <li *ngFor="let course of coursesarr;index as i ; even as isEven">
         {{i}}-{{course.name}}<span *ngIf="isEven">(EVEN)</span><button (click)="onRemove(course)">Remove</button>
     </li>
 </ul> -->
-<ul>
+<!-- <ul>
     <li *ngFor="let course of courses_arr;index as i ; even as isEven;trackBy:trackCourse ">
         {{i}}-{{course.name}}<span *ngIf="isEven">(EVEN)</span><button (click)="onRemove(course)">Remove</button>
     </li>
@@ -79,7 +79,13 @@
 
 <input type="text" appInputFormat [format]="'uppercase'">
 
-<br><br>
-<zippy title="Shipping Details">
+<br><br> -->
+<!-- <zippy title="Shipping Details">
     Shipping Details Content
 </zippy>
+
+<contact-form></contact-form>
+<udemy-course-form></udemy-course-form>
+<br><br> -->
+
+<post-component></post-component>

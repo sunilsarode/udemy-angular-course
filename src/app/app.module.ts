@@ -1,3 +1,8 @@
+import { GithubFollowers } from './services/githubfollowers.service';
+import { DataService } from './services/data.service';
+import { AppErrorHandler } from './common/app-error-handler';
+import { PostService } from './services/post.service';
+
 
 import { TitleCase } from './TitleCase.pipe';
 import { SummaryPipe } from './summary.pipe';
@@ -6,7 +11,7 @@ import { CoursesService } from './courses.service';
 import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms'
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +29,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { UdemyCourseFormComponent } from './udemy-course-form/udemy-course-form.component';
 import { PostComponentComponent } from './post-component/post-component.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GithubComponent } from './github/github.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     ZippyComponent,
     ContactFormComponent,
     UdemyCourseFormComponent,
-    PostComponentComponent
+    PostComponentComponent,
+    GithubComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,14 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [CoursesService,AuthorsService],
+  providers: [
+    CoursesService,
+    AuthorsService,
+    PostService,
+    DataService,
+    GithubFollowers,
+    {provide:ErrorHandler,useClass:AppErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

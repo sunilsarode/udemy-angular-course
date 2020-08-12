@@ -1,0 +1,14 @@
+
+
+<div *ngFor="let post of posts" class="media">
+    <div class="media-left">
+        <a href="#">
+        <img class="mr-3" [src]="post.avatar_url" alt="Generic placeholder image">
+        </a>
+    </div>
+   
+    <div class="media-body">
+      <h5 class="mt-0">{{post.login}}</h5>
+      <a href="post.html_url">{{post.html_url}}</a>
+    </div>
+  </div>

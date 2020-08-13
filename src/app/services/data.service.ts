@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { catchError,map } from 'rxjs/operators';
+import { catchError,map ,switchMap} from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 @Injectable({

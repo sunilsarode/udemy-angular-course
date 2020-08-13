@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { GithubFollowers } from './services/githubfollowers.service';
 import { DataService } from './services/data.service';
 import { AppErrorHandler } from './common/app-error-handler';
@@ -10,7 +11,7 @@ import { AuthorsService } from './authors.service';
 import { CoursesService } from './courses.service';
 import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms'
+import { FormsModule } from '@angular/forms'
 import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,12 @@ import { UdemyCourseFormComponent } from './udemy-course-form/udemy-course-form.
 import { PostComponentComponent } from './post-component/post-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GithubComponent } from './github/github.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { GithubprofileComponent } from './githubprofile/githubprofile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,13 +54,27 @@ import { GithubComponent } from './github/github.component';
     ContactFormComponent,
     UdemyCourseFormComponent,
     PostComponentComponent,
-    GithubComponent
+    GithubComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubprofileComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      [
+        { path: '', component: HomeComponent },
+        { path: 'followers/:username/:id', component: GithubprofileComponent },
+        { path: 'followers', component: GithubComponent },
+        { path: 'posts', component: PostComponentComponent },
+        { path: '**', component: NotFoundComponent },
+        
+      ]
+    )
   ],
   providers: [
     CoursesService,
@@ -61,7 +82,7 @@ import { GithubComponent } from './github/github.component';
     PostService,
     DataService,
     GithubFollowers,
-    {provide:ErrorHandler,useClass:AppErrorHandler}
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
